@@ -45,7 +45,7 @@ print(clients, c_density, c_dommage, c_non_organic, c_quantitymax, c_quantitymin
 model = LpProblem(name="Ferme_MH_optimisation", sense=LpMaximize)
 
 X = LpVariable.dicts('quantité', silo, cat='Continuous')
-#Y = LpVariable('oui/non', lowBound=None, upBound=None, cat='Binary', e=None)
+Y = LpVariable('oui/non', lowBound=None, upBound=None, cat='Binary')
 
 R = 63
 # (R*1.15) - (0.5*H) - E - N + (5*D)

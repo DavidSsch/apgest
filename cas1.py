@@ -23,7 +23,7 @@ density = dict(zip(silo, df['density']))
 dommage = dict(zip(silo, df['dommage']))
 non_organic = dict(zip(silo, df['non-organic']))
 quantity = dict(zip(silo, df['quantity']))
-print(silo,humidity, density, dommage, non_organic, quantity)
+print(silo, humidity, density, dommage, non_organic, quantity)
 
 
 # DATA CLIENTS #
@@ -58,7 +58,7 @@ model += lpSum([(R*1.15) - (0.5*humidity[i]) - dommage[i] - non_organic[i] + (5 
 
 # (Σ (Hi1* Σyi)) / Σyi < 0.13  besoin de la moyenne ou ca calcul direct????
 
-##faut t'il un var binaire a prendre ou pas prendre ? car bizare de faire la qtt * un %
+##faut t'il une var binaire a prendre ou pas prendre ? car bizare de faire la qtt * un %
 
 model += lpSum([humidity[j] * X[j]for j in silo]) <= (c_humidity[c] for c in clients), "HumidityMaximum"
 
